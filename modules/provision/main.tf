@@ -1,4 +1,4 @@
-# Set up the vlan, dhcp server, nat routing and the vpn on the dhcp_nat device
+# Set up the vlan, dhcp server, nat routing and the vpn on the network_hub device
 resource "null_resource" "setup_network_hub" {
   connection {
     type        = "ssh"
@@ -42,7 +42,7 @@ resource "null_resource" "setup_network_hub" {
   }
 }
 
-# Set up the vlan and configure flintlock on the hosts
+# Set up the vlan and configure flintlock on the microvm hosts
 resource "null_resource" "setup_microvm_hosts" {
   count = var.microvm_host_device_count
   connection {
@@ -73,7 +73,7 @@ resource "null_resource" "setup_microvm_hosts" {
   }
 }
 
-# Set up the vlan and pre-reqs for baremetal hosts
+# Set up the vlan and pre-reqs for the baremetal hosts
 resource "null_resource" "setup_baremetal_hosts" {
   count = var.bare_metal_device_count
   connection {
@@ -98,7 +98,7 @@ resource "null_resource" "setup_baremetal_hosts" {
     inline = [
       "chmod +x /root/vlan.sh",
       "chmod +x /root/byoh.sh",
-      "VLAN_ID=${var.vlan_id} ADDR=${count.index + 13} /root/vlan.sh",
+      "VLAN_ID=${var.vlan_id} ADDR=${count.index + var.microvm_host_device_count + 3} /root/vlan.sh",
       "AUTH_KEY=${var.ts_auth_key} /root/byoh.sh",
     ]
   }

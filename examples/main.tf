@@ -16,3 +16,19 @@ module "provision_hosts" {
   microvm_host_addresses = module.create_devices.microvm_host_ips
   baremetal_host_addresses = module.create_devices.bare_metal_host_ips
 }
+
+# useful outputs to print
+output "network_hub_ip" {
+  value = module.create_devices.network_hub_ip
+  description = "The address of the device created to act as a networking configuration hub"
+}
+
+output "microvm_host_ips" {
+  value = module.create_devices.microvm_host_ips
+  description = "The addresses of the devices provisioned as flintlock microvm hosts"
+}
+
+output "bare_metal_host_ips" {
+  value = module.create_devices.bare_metal_host_ips
+  description = "The addresses of the devices provisioned as baremetal hosts"
+}

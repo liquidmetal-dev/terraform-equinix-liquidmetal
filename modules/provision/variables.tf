@@ -1,5 +1,5 @@
 variable "microvm_host_device_count" {
-  description = "number of flintlock hosts to create"
+  description = "The number of devices to provision as flintlock hosts."
   type        = number
   default     = 2
   validation {
@@ -9,7 +9,7 @@ variable "microvm_host_device_count" {
 }
 
 variable "bare_metal_device_count" {
-  description = "number of baremetal hosts to create"
+  description = "The number of devices to provision as bare metal hosts."
   type        = number
   default     = 0
   validation {
@@ -19,30 +19,30 @@ variable "bare_metal_device_count" {
 }
 
 variable "ts_auth_key" {
-  description = "Auth key for tailscale vpn"
+  description = "The personal/team auth key for Tailscale."
   type        = string
   sensitive   = true
 }
 
 variable "private_key_path" {
-  description = "the path to the private key to use for SSH"
+  description = "The path to the private key to use for SSH"
   type        = string
 }
 
 variable "flintlock_version" {
-  description = "the version of flintlock to provision hosts with (default: latest)"
+  description = "The version of flintlock to provision hosts with (default: latest)"
   type        = string
   default     = "latest"
 }
 
 variable "firecracker_version" {
-  description = "the version of firecracker to provision hosts with (default: latest)"
+  description = "The version of firecracker to provision hosts with (default: latest)"
   type        = string
   default     = "latest"
 }
 
 variable "network_hub_address" {
-  description = "the ip address of the network device in equinix"
+  description = "The ip address of the network hub device."
   type        = string
 }
 

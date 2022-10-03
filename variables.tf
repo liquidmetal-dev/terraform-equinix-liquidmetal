@@ -1,22 +1,22 @@
 variable "project_name" {
-  description = "Project name"
+  description = "The name of the project to create in Equinix. Note that project names are not unique"
   type        = string
   default     = "liquid-metal-demo"
 }
 
 variable "org_id" {
-  description = "Org id"
+  description = "The Org ID to create the project under."
   type        = string
 }
 
 variable "metro" {
-  description = "Metro to create resources in"
+  description = "The metro to create resources in."
   type        = string
   default     = "am"
 }
 
 variable "server_type" {
-  description = "The type/plan to use for devices"
+  description = "The type/plan to use for devices."
   type        = string
   default     = "c3.small.x86"
   validation {
@@ -31,13 +31,13 @@ variable "server_type" {
 }
 
 variable "operating_system" {
-  description = "The operating system to use for devices"
+  description = "The operating system to use for devices."
   type        = string
-  default     = "ubuntu_22_04"
+  default     = "ubuntu_20_04"
 }
 
 variable "microvm_host_device_count" {
-  description = "number of flintlock hosts to create"
+  description = "The number of devices to provision as flintlock hosts."
   type        = number
   default     = 2
   validation {
@@ -47,7 +47,7 @@ variable "microvm_host_device_count" {
 }
 
 variable "bare_metal_device_count" {
-  description = "number of baremetal hosts to create"
+  description = "The number of devices to provision as bare metal hosts."
   type        = number
   default     = 0
   validation {
@@ -57,13 +57,12 @@ variable "bare_metal_device_count" {
 }
 
 variable "metal_auth_token" {
-  description = "Auth token"
+  description = "The auth token for Equinix"
   type        = string
   sensitive   = true
 }
 
 variable "public_key" {
-  description = "public key to add to hosts"
+  description = "An SSH public key."
   type        = string
-  sensitive   = true
 }
