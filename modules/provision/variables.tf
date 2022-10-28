@@ -2,20 +2,12 @@ variable "microvm_host_device_count" {
   description = "The number of devices to provision as flintlock hosts."
   type        = number
   default     = 2
-  validation {
-    condition     = var.microvm_host_device_count <= 3
-    error_message = "Too many hosts requested."
-  }
 }
 
 variable "bare_metal_device_count" {
   description = "The number of devices to provision as bare metal hosts."
   type        = number
   default     = 0
-  validation {
-    condition     = var.bare_metal_device_count <= 3
-    error_message = "Too many hosts requested."
-  }
 }
 
 variable "ts_auth_key" {
