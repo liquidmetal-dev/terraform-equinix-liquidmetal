@@ -29,7 +29,7 @@ There are 3 modules:
 ```terraform
 module "create_devices" {
   source = "weaveworks-liquidmetal/liquidmetal/equinix"
-  version = "0.0.1"
+  version = "0.0.4"
 
   project_name = "my-lm-project"
   public_key = "my ssh public key"
