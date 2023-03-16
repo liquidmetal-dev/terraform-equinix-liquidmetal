@@ -1,6 +1,6 @@
 # Liquid Metal on Equinix
 
-These terraform modules can be used to create and provision a Liquid Metal
+These [terraform modules][registry] can be used to create and provision a Liquid Metal
 Platform on Equinix.
 
 They are still being refactored, and represent a first step in simplifying
@@ -39,7 +39,7 @@ module "create_devices" {
 
 module "provision_hosts" {
   source = "weaveworks-liquidmetal/liquidmetal/equinix//modules/provision"
-  version = "0.0.1"
+  version = "0.0.4"
 
   ts_auth_key = "my tailscale auth key"
   private_key_path = "/path/to/my/private/key"
@@ -50,3 +50,12 @@ module "provision_hosts" {
   baremetal_host_addresses = module.create_devices.bare_metal_host_ips
 }
 ```
+
+## Publishing
+
+The modules can be found [here][registry].
+
+To publish a new version, simply create a new release in this repo and the
+modules in the registry will sync.
+
+[registry]: https://registry.terraform.io/modules/weaveworks-liquidmetal/liquidmetal/equinix/latest
