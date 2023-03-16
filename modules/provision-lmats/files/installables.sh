@@ -3,7 +3,7 @@
 KIND_VERSION=0.14.0
 CLUSTERCTL_VERSION=1.1.5
 K9S_VERSION=0.25.21
-GO_VERSION=1.17.12
+GO_VERSION=1.19.3
 
 install_go() {
     wget "https://go.dev/dl/go$GO_VERSION.linux-amd64.tar.gz"
