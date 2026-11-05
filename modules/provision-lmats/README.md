@@ -7,4 +7,4 @@ See the examples folder.
 
 This module will be refactored further.
 
-[lmats]: https://github.com/weaveworks-liquidmetal/liquid-metal-acceptance-tests
+[lmats]: https://github.com/liquidmetal-dev/liquid-metal-acceptance-tests
