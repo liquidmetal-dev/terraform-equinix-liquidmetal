@@ -28,8 +28,7 @@ There are 3 modules:
 
 ```terraform
 module "create_devices" {
-  source = "weaveworks-liquidmetal/liquidmetal/equinix"
-  version = "0.0.4"
+  source = "git::https://github.com/liquidmetal-dev/terraform-equinix-liquidmetal.git?ref=v0.0.4"
 
   project_name = "my-lm-project"
   public_key = "my ssh public key"
@@ -38,8 +37,7 @@ module "create_devices" {
 }
 
 module "provision_hosts" {
-  source = "weaveworks-liquidmetal/liquidmetal/equinix//modules/provision"
-  version = "0.0.4"
+  source = "git::https://github.com/liquidmetal-dev/terraform-equinix-liquidmetal.git//modules/provision?ref=v0.0.4"
 
   ts_auth_key = "my tailscale auth key"
   private_key_path = "/path/to/my/private/key"
@@ -58,4 +56,4 @@ The modules can be found [here][registry].
 To publish a new version, simply create a new release in this repo and the
 modules in the registry will sync.
 
-[registry]: https://registry.terraform.io/modules/weaveworks-liquidmetal/liquidmetal/equinix/latest
+[registry]: https://github.com/liquidmetal-dev/terraform-equinix-liquidmetal

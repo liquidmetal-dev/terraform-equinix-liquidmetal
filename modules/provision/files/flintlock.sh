@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wget https://raw.githubusercontent.com/weaveworks-liquidmetal/flintlock/main/hack/scripts/provision.sh
+wget https://raw.githubusercontent.com/liquidmetal-dev/flintlock/main/hack/scripts/provision.sh
 chmod +x provision.sh
 
 # this pins containerd while I work out a gcc version thing
